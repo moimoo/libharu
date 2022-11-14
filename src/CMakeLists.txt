@@ -89,7 +89,14 @@ endif()
 
 install(
    TARGETS hpdf
+   EXPORT hpdfTargets
    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+# Install export set
+install(
+  EXPORT hpdfTargets
+  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake"
+  )
